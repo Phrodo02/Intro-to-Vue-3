@@ -23,15 +23,16 @@
           <h1>{{ product }}</h1>
           <p v-if="inStock">In Stock</p>
           <p v-else>Out of Stock</p>
+          <!-- solution 2 -->
           <ul>
-            <li v-for="detail in details">{{ detail }}</li>
+            <li v-for="item in products">
+              <ul>
+                <li v-for="detail in item">{{ detail }}</li>
+              </ul>
+              <br>
+            </li>
           </ul>
-          <!-- solution -->
-          <ul>
-            <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
-          </ul>
-          <!-- solution -->
-          <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+          <!-- solution 2 -->
         </div>
       </div>
     </div>
